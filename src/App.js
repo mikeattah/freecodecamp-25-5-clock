@@ -6,42 +6,45 @@ class App extends React.Component {
     super(props);
     this.state = {};
   }
+
   render() {
     return (
       <div className="App">
         <div className="App-header">
           <h1>25 + 5 Clock</h1>
-          <div id="top-controls">
-            <div id="break">
-              <p id="break-label">Break Length</p>
-              <div>
-                <i
-                  id="break-decrement"
-                  class="fa fa-arrow-down"
-                  aria-hidden="true"
-                ></i>
-                <span id="break-length">5</span>
-                <i
-                  id="break-increment"
-                  class="fa fa-arrow-up"
-                  aria-hidden="true"
-                ></i>
+          <div id="clock">
+            <div id="top-controls">
+              <div id="break">
+                <span id="break-label">Break Length</span>
+                <div className="break-display">
+                  <i
+                    id="break-decrement"
+                    className="fa fa-arrow-down"
+                    ariaHidden="true"
+                  ></i>
+                  <span id="break-length">5:00</span>
+                  <i
+                    id="break-increment"
+                    className="fa fa-arrow-up"
+                    ariaHidden="true"
+                  ></i>
+                </div>
               </div>
-            </div>
-            <div id="session">
-              <p id="session-label">Session Length</p>
-              <div>
-                <i
-                  id="session-decrement"
-                  class="fa fa-arrow-down"
-                  aria-hidden="true"
-                ></i>
-                <span id="session-length">25</span>
-                <i
-                  id="session-increment"
-                  class="fa fa-arrow-up"
-                  aria-hidden="true"
-                ></i>
+              <div id="session">
+                <span id="session-label">Session Length</span>
+                <div className="session-display">
+                  <i
+                    id="session-decrement"
+                    className="fa fa-arrow-down"
+                    ariaHidden="true"
+                  ></i>
+                  <span id="session-length">25:00</span>
+                  <i
+                    id="session-increment"
+                    className="fa fa-arrow-up"
+                    ariaHidden="true"
+                  ></i>
+                </div>
               </div>
             </div>
             <div id="display">
@@ -50,10 +53,12 @@ class App extends React.Component {
             </div>
             <div id="bottom-controls">
               <div id="start_stop">
-                <i class="fa fa-play" aria-hidden="true"></i>
-                <i class="fa fa-pause" aria-hidden="true"></i>
+                <i className="fa fa-play" ariaHidden="true"></i>
+                <i className="fa fa-pause" ariaHidden="true"></i>
               </div>
-              <i id="reset" class="fa fa-refresh" aria-hidden="true"></i>
+              <div id="reset">
+                <i className="fa fa-refresh" ariaHidden="true"></i>
+              </div>
             </div>
             <div id="credit">
               <p>

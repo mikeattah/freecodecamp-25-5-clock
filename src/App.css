@@ -1,0 +1,100 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #2f4f4f;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+h1 {
+  height: 15vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+#clock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  height: 80vh;
+  width: 50vw;
+}
+
+#top-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10vh;
+  width: 29vw;
+}
+
+#break,
+#session {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+  width: 50%;
+}
+
+#break-label,
+#session-label {
+  font-size: 1.7rem;
+}
+
+.break-display,
+.session-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 55%;
+}
+
+#break-length {
+}
+
+#session-length {
+}
+
+#display {
+  height: 30vh;
+}
+
+#timer-label {
+}
+
+#time-left {
+}
+
+#bottom-controls {
+  height: 5vh;
+}
+
+#start_stop {
+}
+
+#reset {
+}
+
+#credit {
+  height: 5vh;
+  width: 27vw;
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+}

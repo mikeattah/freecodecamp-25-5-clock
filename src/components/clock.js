@@ -1,49 +1,15 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
 
-const App = () => {
+const Clock = (props) => {
+  const { handleDecrement, handleIncrement, handleStartStop, handleReset } =
+    props;
+
   const [play, setPlay] = useState(`stop`);
   const [label, setLabel] = useState(`Session`);
   const [breakLength, setBreakLength] = useState(5);
   const [sessionLength, setSessionLength] = useState(25);
   const [minutesLeft, setMinutesLeft] = useState(25);
   const [secondsLeft, setSecondsLeft] = useState(0);
-
-  useEffect(() => {
-    if (play === `start`) {
-      const clock = setInterval(() => {
-        if (minutesLeft > 0 && secondsLeft === 0) {
-          setMinutesLeft(minutesLeft - 1);
-          setSecondsLeft(59);
-        }
-
-        if (secondsLeft > 0) {
-          setSecondsLeft(secondsLeft - 1);
-        }
-
-        if (minutesLeft === 0 && secondsLeft === 0 && label === `Session`) {
-          setLabel(`Break`);
-          setMinutesLeft(breakLength);
-          setSecondsLeft(0);
-          let playElement = document.querySelector(`#beep`);
-          playElement.play();
-        } else if (
-          minutesLeft === 0 &&
-          secondsLeft === 0 &&
-          label === `Break`
-        ) {
-          setLabel(`Session`);
-          setMinutesLeft(sessionLength);
-          setSecondsLeft(0);
-          let playElement = document.querySelector(`#beep`);
-          playElement.play();
-        }
-      }, 1000);
-      return () => clearInterval(clock);
-    }
-  }, [play, minutesLeft, secondsLeft, label, breakLength, sessionLength]);
-
-  // const stopClock = () => clearInterval(clock);
 
   return (
     <div className="App">
@@ -113,20 +79,16 @@ const App = () => {
                 </div>
               </div>
             </div>
+            {/* Check above only */}
             <div id="display">
               <span id="timer-label">{label}</span>
               <span id="time-left">
-                {minutesLeft < 10 ? `0` + minutesLeft : minutesLeft}:
-                {secondsLeft < 10 ? `0` + secondsLeft : secondsLeft}
+                {minutesLeft < 10 ? `0${minutesLeft}` : minutesLeft}:
+                {secondsLeft < 10 ? `0${secondsLeft}` : secondsLeft}
               </span>
             </div>
             <div id="bottom-controls">
-              <div
-                id="start_stop"
-                onClick={() =>
-                  play === `stop` ? setPlay(`start`) : setPlay(`stop`)
-                }
-              >
+              <div id="start_stop" onClick={() => setPlay(`start`)}>
                 <i className="fa fa-play" aria-hidden="true"></i>
                 <i className="fa fa-pause" aria-hidden="true"></i>
               </div>
@@ -134,22 +96,13 @@ const App = () => {
                 <i
                   className="fa fa-refresh"
                   aria-hidden="true"
-                  onClick={() => {
-                    setPlay(`stop`);
-                    setLabel(`Session`);
-                    setBreakLength(5);
-                    setSessionLength(25);
-                    setMinutesLeft(25);
-                    setSecondsLeft(0);
-                  }}
+                  onClick={handleReset}
                 ></i>
               </div>
             </div>
             <audio
               id="beep"
               src="/mixkit-guitar-notification-alert-2320.mp3"
-              type="audio/mpeg"
-              autoPlay
             ></audio>
             <div id="credit">
               <p>
@@ -180,4 +133,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Clock;

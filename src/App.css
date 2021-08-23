@@ -113,11 +113,12 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
   height: 5vh;
-  width: 6vw;
+  width: 8vw;
   margin-bottom: 1vh;
 }
 
 #start_stop {
+  width: 6vw;
 }
 
 #reset {

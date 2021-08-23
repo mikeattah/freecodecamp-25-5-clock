@@ -43,8 +43,6 @@ const App = () => {
     }
   }, [play, minutesLeft, secondsLeft, label, breakLength, sessionLength]);
 
-  // const stopClock = () => clearInterval(clock);
-
   return (
     <div className="App">
       <div className="App-header">

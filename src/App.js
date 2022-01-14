@@ -53,7 +53,7 @@ const App = () => {
               <div id="break">
                 <span id="break-label">Break Length</span>
                 <div className="break-display">
-                  <i
+                  <button
                     id="break-decrement"
                     className="fa fa-arrow-down"
                     aria-hidden="true"
@@ -62,9 +62,9 @@ const App = () => {
                         ? setBreakLength(breakLength - 1)
                         : setBreakLength(breakLength);
                     }}
-                  ></i>
+                  ></button>
                   <span id="break-length">{breakLength}</span>
-                  <i
+                  <button
                     id="break-increment"
                     className="fa fa-arrow-up"
                     aria-hidden="true"
@@ -73,13 +73,13 @@ const App = () => {
                         ? setBreakLength(breakLength + 1)
                         : setBreakLength(breakLength);
                     }}
-                  ></i>
+                  ></button>
                 </div>
               </div>
               <div id="session">
                 <span id="session-label">Session Length</span>
                 <div className="session-display">
-                  <i
+                  <button
                     id="session-decrement"
                     className="fa fa-arrow-down"
                     aria-hidden="true"
@@ -92,9 +92,9 @@ const App = () => {
                         setMinutesLeft(sessionLength);
                       }
                     }}
-                  ></i>
+                  ></button>
                   <span id="session-length">{sessionLength}</span>
-                  <i
+                  <button
                     id="session-increment"
                     className="fa fa-arrow-up"
                     aria-hidden="true"
@@ -107,7 +107,7 @@ const App = () => {
                         setMinutesLeft(sessionLength);
                       }
                     }}
-                  ></i>
+                  ></button>
                 </div>
               </div>
             </div>
@@ -119,7 +119,7 @@ const App = () => {
               </span>
             </div>
             <div id="bottom-controls">
-              <div
+              <button
                 id="start_stop"
                 onClick={() =>
                   play === `stop` ? setPlay(`start`) : setPlay(`stop`)
@@ -127,8 +127,8 @@ const App = () => {
               >
                 <i className="fa fa-play" aria-hidden="true"></i>
                 <i className="fa fa-pause" aria-hidden="true"></i>
-              </div>
-              <div id="reset">
+              </button>
+              <button id="reset">
                 <i
                   className="fa fa-refresh"
                   aria-hidden="true"
@@ -141,7 +141,7 @@ const App = () => {
                     setSecondsLeft(0);
                   }}
                 ></i>
-              </div>
+              </button>
             </div>
             <audio
               id="beep"

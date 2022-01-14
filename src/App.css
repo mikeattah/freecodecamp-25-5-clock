@@ -83,6 +83,15 @@ h1 {
   font-weight: bold;
 }
 
+#break-increment,
+#break-decrement,
+#session-increment,
+#session-decrement {
+  border: none;
+  color: white;
+  background-color: #2f4f4f;
+}
+
 #display {
   display: flex;
   flex-direction: column;
@@ -119,9 +128,15 @@ h1 {
 
 #start_stop {
   width: 6vw;
+  border: none;
+  color: white;
+  background-color: #2f4f4f;
 }
 
 #reset {
+  border: none;
+  color: white;
+  background-color: #2f4f4f;
 }
 
 #credit {
